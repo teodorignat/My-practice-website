@@ -478,8 +478,8 @@ h2 {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
         position: absolute;
-        width: 50vh;
-        height: 55%;
+        width: 90%;
+        height: 35vh;
         border-radius: 10px;
     }
     
@@ -552,7 +552,7 @@ h2 {
 
 @media only screen and (max-width: 300px) {
     .list {
-        height: 50%;
+        height: 30vh;
     }
     
     .listItem {
