@@ -145,9 +145,9 @@ button:hover {
 
 @media only screen and (max-width: 600px) {
     .calc-wrapper {
-        margin-top: 10%;
+        margin-top: 5%;
         width: 95vw;
-        height: 90vh;
+        height: 85vh;
         padding: 3em 3em;
     }
 
