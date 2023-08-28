@@ -485,7 +485,7 @@ h2 {
         scrollbar-width: none;  /* Firefox */
         position: absolute;
         width: 90%;
-        height: 50vh;
+        max-height: 50vh;
         border-radius: 10px;
     }
     
