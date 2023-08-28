@@ -201,10 +201,7 @@ body {
 }
 
 
-.project {
-    font-family: 'Pangolin', cursive;
-    font-family: 'Poiret One', cursive;
-    font-family: 'Press Start 2P', cursive;
+.project {
     min-width: 200px;
     min-height: 200px;
     /* border: 1px solid #fff; */
