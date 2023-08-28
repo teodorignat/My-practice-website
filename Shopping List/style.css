@@ -457,7 +457,7 @@ h2 {
     #ToDoList {
         top:5%;
         width: 90vw;
-        height: 65vh;
+        height: 60vh;
     }
     
     .settingsBtn {
@@ -485,7 +485,7 @@ h2 {
         scrollbar-width: none;  /* Firefox */
         position: absolute;
         width: 90%;
-        max-height: 50vh;
+        height: 50vh;
         border-radius: 10px;
     }
     
