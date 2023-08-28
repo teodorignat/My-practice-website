@@ -455,9 +455,9 @@ h2 {
     }
     
     #ToDoList {
-        margin-top:5%;
+        top:5%;
         width: 90vw;
-        height: 70vh;
+        height: 65vh;
     }
     
     .settingsBtn {
