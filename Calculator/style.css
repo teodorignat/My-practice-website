@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(to bottom,#303030, #434242);
+}
+
+/* ---------- Navigation ----------- */
+
+.navBar {
+    width: 50%;
+    margin: 0;
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: 600;
+    /* border: 1px solid #999; */
+    position: fixed;
+    width: 100vw;
+    z-index: 2;
+    background: linear-gradient(to bottom, #222222, #434242);
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+}
+
+.navItem {
+    padding: 0 1em;
+    list-style-type: none;
+}
+
+.navItem a {
+    text-decoration: none;
+    color: #F3EFE0;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #777;
+    display: flex;
+}
+
+.navItem a p {
+    padding: 0 5px;;
+    margin: 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.navItem a:hover {
+    color: #ccc;
+}
+
+.icon {
+    width: 1em;
+}
+
+/* ---- Content of the project ---- */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-wrapper {
+    width: 400px;
+    height: 65vh;
+    padding: 3em 3em;
+    border: 1px solid rgb(82 80 76 / 0.5);
+    border-radius: 1em;
+    background-color: #fcf5de;
+    box-shadow: 0px 10px 10px #434242, inset 0px 0px 15px #52504c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calc-screen {
+    width: 100%;
+    height: 35%;
+    padding: 5px;
+    border: 1px solid rgba(150, 150, 150, 0.6);
+    border-radius: 10px;
+    background-color: rgb(250 244 192 / 0.6);
+    box-shadow: 0px 5px 5px rgb(184 181 162 / 0.6);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.output {
+    margin: 5px 0px;
+    font-family: 'Black Ops One', cursive;
+    font-size: 2.3em;
+    max-width: 100%;
+    max-height: 100%;
+    word-wrap:break-word;
+    line-height: 0.75em;
+}
+
+.calc-buttons {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid #000; */
+    margin: 2em 0 0 0; 
+    display: grid;
+    grid-template-columns: repeat(5, minmax(50px, 150px));
+    gap: 7px;
+}
+
+button {
+    border: 1px solid rgba(150, 150, 150, 0.6);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 3px 5px rgb(184 181 162 / 0.6);
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: 'Black Ops One', cursive;
+    transition: all 0.1s ease-in;
+}
+
+button:hover {
+    background-color: rgba(204, 204, 204, 0.6);
+    transition: all 0.1s ease-in;
+}
+
+.span-twoX {
+    grid-column: span 2;
+}
+
+.span-twoY {
+    grid-row: span 2;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .calc-wrapper {
+        margin-top: 10%;
+        width: 95vw;
+        height: 90vh;
+        padding: 3em 3em;
+    }
+
+    .output {
+        font-size: 2em;
+    }
+
+}
+@media only screen and (max-width: 450px) {
+    .navBar {
+        font-size: 1em;
+    }
+
+    .calc-wrapper {
+        padding: 1em 1em;
+    }
+
+    button {
+        font-size: 5vw;
+    }
+
+    .calc-buttons {
+        grid-template-columns: repeat(4, minmax(20px, 100px));
+        gap: 7px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .navBar {
+        font-size: 0.8em;;
+    }
+}
