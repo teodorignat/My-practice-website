@@ -82,7 +82,7 @@ body {
 #ToDoList {
     width: 600px;
     /* height: 850px; What i've used before */
-    min-height: 92vh; /* What i should've used instead incase my list needs to grow*/
+    height: 92vh; /* What i should've used instead incase my list needs to grow*/
     position: absolute;
     top: 5%;
     border:5px solid rgba(255, 255, 255, 0.1);
