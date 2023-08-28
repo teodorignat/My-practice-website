@@ -440,7 +440,7 @@ h2 {
 
 @media only screen and (max-width: 600px) {
     .container {
-        min-height: 110%;
+        min-height: 100%;
     }
 
     .navBar {
@@ -456,7 +456,7 @@ h2 {
     
     #ToDoList {
         width: 90vw;
-        min-height: 87vh;
+        min-height: 80vh;
     }
     
     .settingsBtn {
