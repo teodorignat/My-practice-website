@@ -10,7 +10,7 @@ let displayOutput = (event) => {
     let operator = ['/', '*', '+' , '-'];
     let numbers = ['00','0', '1', '2', '3','4','5','6','7','8','9'];
     if (event.target.innerHTML.includes("(")) {
-        if (output.innerHTML === '0' || output.innerHTML === '0.00') {
+        if (output.innerHTML === '0' || output.innerHTML === '0.00' || output.innerHTML === '') {
             return output.innerHTML = event.target.innerHTML;
         } else if (!operator.includes(output.innerHTML[output.innerHTML.length-1])) {
             alert("You need an operator before pharantesis!");
@@ -20,7 +20,7 @@ let displayOutput = (event) => {
     } else if (event.target.innerHTML.includes(")")) {
             if (operator.includes(output.innerHTML[output.innerHTML.length-1]) === true) {
             alert("You can't have an operator before closing the parantesis.");
-            }  else if (output.innerHTML === '0' || output.innerHTML === '0.00') {
+            }  else if (output.innerHTML === '0' || output.innerHTML === '0.00' || output.innerHTML === '') {
                 return output.innerHTML = event.target.innerHTML;
             } else {
                 return output.innerHTML += event.target.innerHTML;
@@ -28,17 +28,13 @@ let displayOutput = (event) => {
     } else if (numbers.includes(event.target.innerHTML)) {
             if (output.innerHTML[output.innerHTML.length-1] === ')') {
                 alert ('You need an operator after closing pharantesis!')
-            } else if (output.innerHTML === '0' || output.innerHTML === '0.00') {
+            } else if (output.innerHTML === '0' || output.innerHTML === '0.00' || output.innerHTML === '') {
                 return output.innerHTML = event.target.innerHTML;
             } else {
                 return output.innerHTML += event.target.innerHTML;
             }   
     } else {
-        if (output.innerHTML === '0' || output.innerHTML === '0.00') {
-            return output.innerHTML = event.target.innerHTML;
-        } else {
             return output.innerHTML = output.innerHTML + event.target.innerHTML;
-        }
     }
 }
 
@@ -63,7 +59,7 @@ let delFunction = () => {
 }
 
 let equalFunction = () => {
-    if (output.innerHTML === '0' || output.innerHTML === '0.00') {
+    if (output.innerHTML === '0' || output.innerHTML === '0.00' || output.innerHTML === '') {
         return output.innerHTML = '0';
     } else { 
         totalCalc = eval(output.innerHTML);
