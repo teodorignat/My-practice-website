@@ -26,11 +26,13 @@ let displayOutput = (event) => {
                 return output.innerHTML += event.target.innerHTML;
             }
     } else if (numbers.includes(event.target.innerHTML)) {
-        if (output.innerHTML[output.innerHTML.length-1] === ')') {
-            alert ('You need an operator after closing pharantesis!')
-        } else {
-            return output.innerHTML += event.target.innerHTML;
-        }
+            if (output.innerHTML[output.innerHTML.length-1] === ')') {
+                alert ('You need an operator after closing pharantesis!')
+            } else if (output.innerHTML === '0' || output.innerHTML === '0.00') {
+                return output.innerHTML = event.target.innerHTML;
+            } else {
+                return output.innerHTML += event.target.innerHTML;
+            }   
     } else {
         if (output.innerHTML === '0' || output.innerHTML === '0.00') {
             return output.innerHTML = event.target.innerHTML;
