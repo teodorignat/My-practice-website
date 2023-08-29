@@ -438,7 +438,7 @@ h2 {
     
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     .container {
         min-height: 100%;
     }
@@ -456,7 +456,7 @@ h2 {
     
     #ToDoList {
         width: 90vw;
-        height: 80vh;
+        min-height: 80vh;
     }
     
     .settingsBtn {
