@@ -7,31 +7,33 @@ const btnEqual = document.querySelector('.btn-equal');
 let totalCalc = 0;
 
 let displayOutput = (event) => {
-    let operator = ['/', '*', '+' , '-',];
+    let operator = ['/', '*', '+' , '-'];
+    let numbers = ['00','0', '1', '2', '3','4','5','6','7','8','9'];
     if (event.target.innerHTML.includes("(")) {
-        if (operator.includes(output.innerHTML[output.innerHTML.length-2]) === false) {
+        if (output.innerHTML === '0' || output.innerHTML === '0.00') {
+            return output.innerHTML = event.target.innerHTML;
+        } else if (!operator.includes(output.innerHTML[output.innerHTML.length-1])) {
             alert("You need an operator before pharantesis!");
-        }  else {
-            if (output.innerHTML === '0' || output.innerHTML === '0.00') {
-                output.innerHTML = event.target.innerHTML;
-            } else {
-                return output.innerHTML = output.innerHTML + event.target.innerHTML;
-            }
+        } else {
+            return output.innerHTML += event.target.innerHTML;
         }
     } else if (event.target.innerHTML.includes(")")) {
-        if (operator.includes(output.innerHTML[output.innerHTML.length-2]) === true) {
+            if (operator.includes(output.innerHTML[output.innerHTML.length-1]) === true) {
             alert("You can't have an operator before closing the parantesis.");
-        }  else {
-            if (output.innerHTML === '0' || output.innerHTML === '0.00') {
-                output.innerHTML = event.target.innerHTML;
+            }  else if (output.innerHTML === '0' || output.innerHTML === '0.00') {
+                return output.innerHTML = event.target.innerHTML;
             } else {
-                return output.innerHTML = output.innerHTML + event.target.innerHTML;
+                return output.innerHTML += event.target.innerHTML;
             }
-
+    } else if (numbers.includes(event.target.innerHTML)) {
+        if (output.innerHTML[output.innerHTML.length-1] === ')') {
+            alert ('You need an operator after closing pharantesis!')
+        } else {
+            return output.innerHTML += event.target.innerHTML;
         }
     } else {
         if (output.innerHTML === '0' || output.innerHTML === '0.00') {
-            output.innerHTML = event.target.innerHTML;
+            return output.innerHTML = event.target.innerHTML;
         } else {
             return output.innerHTML = output.innerHTML + event.target.innerHTML;
         }
@@ -41,12 +43,10 @@ let displayOutput = (event) => {
 let operators = (event) => {
     let operator = ['/', '*', '+' , '-'];
     if (operator.includes(event.target.innerHTML)) {
-        if (operator.includes(output.innerHTML[output.innerHTML.length-2])) {
+        if (operator.includes(output.innerHTML[output.innerHTML.length-1])) {
             alert("You can't have two consecutive operators");
-        } else if (output.innerHTML[output.innerHTML.length-2] === "(" ) {
-            alert("You can't have operator after pharantesis.")
         } else {
-            return output.innerHTML = output.innerHTML + ' ' + event.target.innerHTML + ' ';
+            return output.innerHTML = output.innerHTML + event.target.innerHTML;
         }
     }
 }
@@ -57,12 +57,7 @@ let acFunction = () => {
 }
 
 let delFunction = () => {
-    let operator = ['/', '*', '+' , '-'];
-    if (operator.includes(output.innerHTML[output.innerHTML.length-2])) {
-        return output.innerHTML = output.innerHTML.substring(0,output.innerHTML.length-3);
-    } else {
-        return output.innerHTML = output.innerHTML.substring(0,output.innerHTML.length-1);
-    }
+    return output.innerHTML = output.innerHTML.substring(0,output.innerHTML.length-1);
 }
 
 let equalFunction = () => {
@@ -77,9 +72,11 @@ let equalFunction = () => {
 btnInput.forEach((index) => {
     index.addEventListener('click', displayOutput);
 })
+
 btnOperator.forEach((index) => {
     index.addEventListener('click', operators);
 })
+
 btnAc.addEventListener('click', acFunction)
 btnDel.addEventListener('click', delFunction);
 btnEqual.addEventListener('click', equalFunction);

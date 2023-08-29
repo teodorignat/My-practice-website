@@ -74,10 +74,10 @@ body {
     width: 400px;
     height: 65vh;
     padding: 3em 3em;
-    border: 1px solid rgb(82 80 76 / 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 1em;
     background-color: #fcf5de;
-    box-shadow: 0px 10px 10px #434242, inset 0px 0px 15px #52504c;
+    box-shadow: 0px 10px 10px #434242, inset 0px 0px 15px #3a301d;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -91,7 +91,7 @@ body {
     border: 1px solid rgba(150, 150, 150, 0.6);
     border-radius: 10px;
     background-color: rgb(250 244 192 / 0.6);
-    box-shadow: 0px 5px 5px rgb(184 181 162 / 0.6);
+    box-shadow: 0px 5px 5px rgb(184 181 162 / 0.6), inset 0px 0px 7px #000000;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -122,7 +122,7 @@ button {
     border: 1px solid rgba(150, 150, 150, 0.6);
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0px 3px 5px rgb(184 181 162 / 0.6);
+    box-shadow: 0px 3px 5px rgb(184 181 162 / 0.6), inset 0px 0px 7px #b39a69;
     font-size: 1.2em;
     font-weight: 500;
     font-family: 'Black Ops One', cursive;
@@ -132,6 +132,10 @@ button {
 button:hover {
     background-color: rgba(204, 204, 204, 0.6);
     transition: all 0.1s ease-in;
+}
+
+.btn-operator, .btn-equal, .btn-ac, .btn-del {
+    background-color: rgb(255 220 180 / 0.6);
 }
 
 .span-twoX {
@@ -147,7 +151,7 @@ button:hover {
     .calc-wrapper {
         margin-top: 0;
         width: 95vw;
-        height: 80vh;
+        height: 85vh;
         padding: 3em 3em;
     }
 
@@ -170,7 +174,7 @@ button:hover {
     }
 
     .calc-buttons {
-        grid-template-columns: repeat(5, minmax(20px, 100px));
+        grid-template-columns: repeat(4, minmax(20px, 100px));
         gap: 7px;
     }
 }
