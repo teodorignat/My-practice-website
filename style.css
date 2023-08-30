@@ -320,10 +320,10 @@ body {
 }
 
 .active.fade-left {
-    animation: fade-left 1s ease-in;
+    animation: fade-left 0.3s ease-in;
   }
 .active.fade-right {
-    animation: fade-right 1s ease-in;
+    animation: fade-right 0.3s ease-in;
 }
 
 @keyframes fade-left {
