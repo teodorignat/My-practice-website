@@ -12,6 +12,8 @@ let displayOutput = (event) => {
     if (event.target.innerHTML.includes("(")) {
         if (output.innerHTML === '0' || output.innerHTML === '0.00' || output.innerHTML === '') {
             return output.innerHTML = event.target.innerHTML;
+        } else if (output.innerHTML[output.innerHTML.length-1] === "("){
+            return output.innerHTML += event.target.innerHTML;
         } else if (!operator.includes(output.innerHTML[output.innerHTML.length-1])) {
             alert("You need an operator before pharantesis!");
         } else {
@@ -41,9 +43,7 @@ let displayOutput = (event) => {
 let operators = (event) => {
     let operator = ['/', '*', '+' , '-'];
     if (operator.includes(event.target.innerHTML)) {
-        if (operator.includes(output.innerHTML[output.innerHTML.length-1])) {
-            alert("You can't have two consecutive operators");
-        } else {
+        if (!operator.includes(output.innerHTML[output.innerHTML.length-1])) {
             return output.innerHTML = output.innerHTML + event.target.innerHTML;
         }
     }
