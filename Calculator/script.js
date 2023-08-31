@@ -35,6 +35,10 @@ let displayOutput = (event) => {
             } else {
                 return output.innerHTML += event.target.innerHTML;
             }   
+    } else if (event.target.innerHTML.includes(".")) {
+            if (output.innerHTML[output.innerHTML.length-1] != '.') {
+                return output.innerHTML = output.innerHTML + event.target.innerHTML;
+            }
     } else {
             return output.innerHTML = output.innerHTML + event.target.innerHTML;
     }
