@@ -167,7 +167,7 @@ body {
 
 #projects-title {
     font-family: 'Righteous', cursive;
-    font-size: 1.3em;
+    font-size: 1.7em;
     width: 95vw;
     /* border: 1px solid #000; */
     border-radius: 1em;
@@ -178,7 +178,7 @@ body {
     display:flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 10em;
+    gap: 25vw;
 }
 
 #projects-title h2 {
@@ -380,7 +380,7 @@ body {
     }
 
     #projects-title {
-        gap:8em;
+        gap: 20vw;
     }
 
     .titleimg {
