@@ -47,7 +47,7 @@ let displayOutput = (event) => {
 let operators = (event) => {
     let operator = ['/', '*', '+' , '-'];
     if (operator.includes(event.target.innerHTML)) {
-        if (!operator.includes(output.innerHTML[output.innerHTML.length-1])) {
+        if (!operator.includes(output.innerHTML[output.innerHTML.length-1]) && output.innerHTML[output.innerHTML.length-1] != ".") {
             return output.innerHTML = output.innerHTML + event.target.innerHTML;
         }
     }
