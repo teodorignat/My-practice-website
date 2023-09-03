@@ -379,17 +379,18 @@ body {
 
     .titleimg {
         width: 10%;
-    }
-
-    .projects {
-        flex-direction: column;
-    }
+    }
 
     .project-wrapper {
         width: 90vw;
         min-height: 10em;
         padding: 1em 1em;
         grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+
+    .project {
+        width: 200px;
+        height: 200px;
     }
 
     .project h2 {
