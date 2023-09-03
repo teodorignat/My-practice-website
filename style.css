@@ -159,9 +159,9 @@ body {
     width: 100vw;
     padding: 2em 2em;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* border: 1px solid #000; */
 }
 
@@ -190,23 +190,24 @@ body {
 }
 
 .project-wrapper {
-    width: 60vw;
-    min-height: 53vh;
+    width: 95vw;
+    min-height: 30vh;
     border: 1px solid #000;
     border-radius: 1em;
     padding: 1.5em 1.5em;
     background-color: rgb(255 255 255 / 0.2);
     box-shadow:0 8px 10px 10px rgb(0 0 0 / 0.5);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px,1fr));
+    /* justify-items: center; */
     gap: 1em;
 }
 
 
 .project {
-    min-width: 200px;
-    min-height: 200px;
+    min-width: 300px;
+    min-height: 300px;
     /* border: 1px solid #fff; */
     border-radius: 2em;
     background-color: rgb(255 255 255 / 0.5);
@@ -246,9 +247,10 @@ body {
 }
 
 #about {
-    width: 33vw;
-    min-height: 75vh;
-    padding: 2em 1em;
+    width: 95vw;
+    min-height: 40vh;
+    margin-top: 1em;
+    padding: 2em 5em;
     border: 1px solid #000;
     border-radius: 1em;
     background-color: rgb(255 255 255 / 0.2);
@@ -278,13 +280,13 @@ body {
 }
 
 .about-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #fff;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .about-text {
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: justify;
     color: #fff;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -360,17 +362,8 @@ body {
 }
 
 @media only screen and (max-width: 1137px) {
-    .project-wrapper {
-        width: 63vw;
-    }
-
     .project h2 {
-        font-size: 1.4vw;
-    }
-
-    #about {
-        width: 30vw;
-        min-height: 75vh;
+        font-size: 1.6vw;
     }
 }
 
