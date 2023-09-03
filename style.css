@@ -417,6 +417,10 @@ body {
         display: none;
     }
 
+    #about {
+        padding:2em 1.5em;
+    }
+
 }
 
 @media only screen and (max-width: 450px) {
