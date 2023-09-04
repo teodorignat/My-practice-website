@@ -454,8 +454,8 @@ body {
     }
 
     .project {
-        min-width: 100%;
-        min-height: 400px;
+        max-width: 100%;
+        height: 400px;
     }
 
     .project h2 {
@@ -482,6 +482,11 @@ body {
     .titleimg {
         display: none;
     }
+    
+    .project {
+        max-width: 100%;
+        height: 200px;
+    }
 
     #about {
         padding:2em 1.5em;
@@ -490,13 +495,12 @@ body {
     .about-content {
         flex-direction: column-reverse;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         gap: 2em;
     }
 
     .about-text {
-        width: 80%;
-        align-self: center;
+        width: 90%;
     }
     
     
