@@ -296,8 +296,9 @@ body {
 .about-content {
     margin-top: 2em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
+
 
 .about-contact {
     display: flex;
@@ -323,11 +324,29 @@ body {
 
 .contact-list li a {
     text-decoration: none;
-    color: #272727;
+    color: #cccccc;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.contact-list li a:hover {
+    color: #fff;
+}
+
+.contact-list li a img {
+    width: 0.9em;
+}
+
+.contact-list li:nth-child(2) a img {
+    width: 1em;
+    margin-left: -0.11em;
 }
 
 .about-text {
-    width: 30%;
+    width: 40%;
     margin: 0;
     font-size: 1.2em;
     text-align: justify;
@@ -335,6 +354,7 @@ body {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     align-self: flex-start;
 }
+
 
 .footer {
     width: 95vw;
@@ -466,6 +486,20 @@ body {
     #about {
         padding:2em 1.5em;
     }
+
+    .about-content {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2em;
+    }
+
+    .about-text {
+        width: 80%;
+        align-self: center;
+    }
+    
+    
 
 }
 
