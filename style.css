@@ -13,6 +13,7 @@ body {
     font-family: 'Raleway', sans-serif;
     overflow-x: hidden;
     background: url("img/background.jpg") no-repeat center center fixed;  
+    -webkit-background-size: cover;
     background-size: cover;
 
 }
@@ -532,7 +533,7 @@ body {
     }
     
     .cover {
-        height: 99vh;
+        height: 97vh;
     }
 
     .titlebox {
