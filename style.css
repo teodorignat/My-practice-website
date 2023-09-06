@@ -487,7 +487,7 @@ body {
 
 @media only screen and (max-width: 680px) {
     .cover {
-        height: 90vh;
+        height: 95vh;
     }
 
     .pagetitle {
@@ -534,10 +534,6 @@ body {
 @media only screen and (max-width: 450px) {
     .navItem a p {
         font-size: 0.65em;
-    }
-    
-    .cover {
-        height: 90vh;
     }
 
     .titlebox {
