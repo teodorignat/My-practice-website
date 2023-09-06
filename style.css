@@ -486,6 +486,10 @@ body {
 }
 
 @media only screen and (max-width: 680px) {
+    .cover {
+        height: 90vh;
+    }
+
     .pagetitle {
         font-size: 2em;
     }
