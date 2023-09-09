@@ -157,7 +157,7 @@ let createListElement = ()  => {
     btnEditDone.onclick = function() {
         if (p.innerHTML.length < 64) {   
             p.contentEditable = false;
-            p.style.backgroundColor = 'none';
+            p.style.backgroundColor = 'transparent';
             btnEditDone.style.display = 'none';
             btnEdit.style.display = 'block';
         } else {
@@ -252,7 +252,7 @@ let createNewListElement= () => {
     btnEditDone.onclick = function() {
         if (p.innerHTML.length < 64) {   
             p.contentEditable = false;
-            p.style.background = 'none';
+            p.style.backgroundColor = 'transparent';
             btnEditDone.style.display = 'none';
             btnEdit.style.display = 'block';
         } else {
