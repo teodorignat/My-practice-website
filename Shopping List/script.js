@@ -71,10 +71,10 @@ let createListElement = ()  => {
     btn.classList.add('btnDel');
     ul[0].appendChild(li);
     li.appendChild(p);
-    if (inputLength() < 37 && input.value != ' ') {
+    if (inputLength() < 65 && input.value != ' ') {
         p.innerHTML = input.value;
     } else {
-        alert('Text too long! (Max 36 characters)');
+        alert('Text too long! (Max 64 characters)');
         input.value = '';
     }
     li.appendChild(btn);
@@ -122,10 +122,10 @@ let createNewListElement= () => {
     btn.classList.add('btnDel');
     ul.appendChild(li);
     li.appendChild(p);
-    if (inputLength() < 37 && input.value != ' ') {
+    if (inputLength() < 65 && input.value != ' ') {
         p.innerHTML = input.value;
     } else {
-        alert('Text too long! (Max 36 characters)');
+        alert('Text too long! (Max 64 characters)');
         input.value = '';
     }
     li.appendChild(btn);
@@ -180,11 +180,16 @@ let addElementAfterClick = ()  => {
         } else if ((length() > 11) && (length() < 22)) {
             createNewListElement();
             length()
-        } else {
-            alert('List is full!!');
+        } else if (length() >= 22) {
+            let div = document.querySelector('.list');
+            div.style.flexDirection = "column";
+            div.style.height = "50vh";
+            div.style.overflowY = "scroll";
+            createNewListElement();
+            length();
         }
-    } else if (inputLength() > 36){
-        alert('Text too long! (Max 36 characters)')
+    } else if (inputLength() > 65){
+        alert('Text too long! (Max 64 characters)')
         input.value = '';
     };
 };
@@ -201,12 +206,17 @@ let addElementAfterKeypress = (event)  => {
         } else if ((length() > 11) && (length() < 22)) {
             createNewListElement();
             length();
-        } else { 
-            alert('List is full!!');
+        } else if (length() >= 22) {
+            let div = document.querySelector('.list');
+            div.style.flexDirection = "column";
+            div.style.maxHeight = "50vh";
+            div.style.overflowY = "scroll";
+            createNewListElement();
+            length();
         }
         
-    } else if (inputLength() > 36) {
-        alert('Text too long! (Max 36 characters)')
+    } else if (inputLength() > 65) {
+        alert('Text too long! (Max 64 characters)')
         input.value = '';
     };
 };
