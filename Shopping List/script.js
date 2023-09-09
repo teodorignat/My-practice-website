@@ -44,8 +44,8 @@ for (let i = 0 ; i < btnDel.length; i++) {
         if (listItem2.length === 1 && listItem.length === 11) {
             this.parentElement.remove();
             ul.remove();
-            length();
         }
+        length();
     }
 }
 
@@ -82,15 +82,16 @@ let createListElement = ()  => {
     btn.onclick = function() {
         const listItem = document.querySelectorAll('.listItem');
         const listItem2 = document.querySelectorAll('.listItem2');
-        let lists = document.querySelectorAll('ul');
+        let ul = document.querySelector('.shoppingList2');
         if (listItem.length > 0) {    
             this.parentElement.remove();
             if (listItem.length < 12 && listItem2.length > 0) {
                 transferListItem();
             }
         }
-        if (lists.length > 1 && (listItem2.length === 0 || listItem.length === 0)) {
+        if (listItem2.length === 1 && listItem.length === 11) {
             this.parentElement.remove();
+            ul.remove();
         }
         length();
     }
