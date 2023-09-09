@@ -1,8 +1,11 @@
 let ul = document.querySelector('.shoppingList');
 let btnAdd = document.getElementsByClassName('btnAdd');
 const btnDel = document.getElementsByClassName('btnDel');
+const btnEdit = document.querySelectorAll('.btnEdit');
+const btnEditDone = document.querySelectorAll('.btnEditDone');
 let listItem = document.querySelectorAll('.listItem');
 let listItem2 = document.querySelectorAll('.listItem2');
+const listText = document.querySelectorAll('.listText');
 let input = document.getElementsByClassName('userinput');
 const btnErase = document.querySelector('.erase');
 const settingsBtn = document.querySelector('.settingsBtn');
@@ -45,7 +48,34 @@ for (let i = 0 ; i < btnDel.length; i++) {
             this.parentElement.remove();
             ul.remove();
         }
+        if (length() <= 22) {
+            let div = document.querySelector('.list');
+            div.style.flexDirection = "row";
+            div.style.maxHeight = "52vh";
+            div.style.overflowY = "hidden";
+        }
+
         length();
+    }
+    
+    btnEdit[i].onclick = function() {
+        let listText = document.querySelectorAll(".listText");
+        listText[i].contentEditable = true;
+        listText[i].style.backgroundColor = '#aaa';
+        btnEdit[i].style.display = 'none';
+        btnEditDone[i].style.display = 'block';
+    }
+
+    btnEditDone[i].onclick = function() {
+        let listText = document.querySelectorAll(".listText");
+        if (listText[i].innerHTML.length < 64) { 
+            listText[i].contentEditable = false;
+            listText[i].style.backgroundColor = 'transparent';
+            btnEditDone[i].style.display = 'none';
+            btnEdit[i].style.display = 'block';
+        } else {
+            alert('Text too long! (Max 64 characters)');
+        }
     }
 }
 
@@ -63,13 +93,23 @@ let createListElement = ()  => {
     let ul = document.getElementsByClassName('shoppingList');
     let li = document.createElement('li');
     let p = document.createElement('p');
-    let btn = document.createElement('button');
-    let img = document.createElement('img');
-    img.src = "https://cdn-icons-png.flaticon.com/512/3405/3405244.png";
-    img.classList.add('deleteIcon');
+    let btnDel = document.createElement('button');
+    let btnEdit = document.createElement('button');
+    let btnEditDone = document.createElement('button');
+    let imgDel = document.createElement('img');
+    let imgEdit = document.createElement('img');
+    let imgEditDone = document.createElement('img');
+    imgDel.src = "https://cdn-icons-png.flaticon.com/512/3405/3405244.png";
+    imgDel.classList.add('deleteIcon');
+    imgEdit.src = "https://cdn-icons-png.flaticon.com/128/1828/1828911.png";
+    imgEdit.classList.add('editIcon');
+    imgEditDone.src = "https://cdn-icons-png.flaticon.com/128/1442/1442912.png";
+    imgEditDone.classList.add('editDoneIcon');
     li.classList.add('listItem');
     p.classList.add('listText');
-    btn.classList.add('btnDel');
+    btnDel.classList.add('btnDel');
+    btnEdit.classList.add('btnEdit');
+    btnEditDone.classList.add('btnEditDone');
     ul[0].appendChild(li);
     li.appendChild(p);
     if (inputLength() < 65 && input.value != ' ') {
@@ -78,8 +118,13 @@ let createListElement = ()  => {
         alert('Text too long! (Max 64 characters)');
         input.value = '';
     }
-    li.appendChild(btn);
-    btn.onclick = function() {
+    li.appendChild(btnEdit);
+    li.appendChild(btnEditDone);
+    li.appendChild(btnDel);
+    btnEdit.appendChild(imgEdit);
+    btnEditDone.appendChild(imgEditDone);
+    btnDel.appendChild(imgDel);
+    btnDel.onclick = function() {
         const listItem = document.querySelectorAll('.listItem');
         const listItem2 = document.querySelectorAll('.listItem2');
         let ul = document.querySelector('.shoppingList2');
@@ -93,11 +138,35 @@ let createListElement = ()  => {
             this.parentElement.remove();
             ul.remove();
         }
+        if (length() <= 22) {
+            let div = document.querySelector('.list');
+            div.style.flexDirection = "row";
+            div.style.maxHeight = "52vh";
+            div.style.overflowY = "hidden";
+        }
         length();
     }
-    btn.appendChild(img);
+
+    btnEdit.onclick = function() {
+        p.contentEditable = true;
+        p.style.backgroundColor = '#aaa';
+        btnEdit.style.display = 'none';
+        btnEditDone.style.display = 'block';
+    }
+
+    btnEditDone.onclick = function() {
+        if (p.innerHTML.length < 64) {   
+            p.contentEditable = false;
+            p.style.backgroundColor = 'none';
+            btnEditDone.style.display = 'none';
+            btnEdit.style.display = 'block';
+        } else {
+            alert("Text too long! (Max 64 characters)")
+        }
+    }
+
     input.value = "";
-    li.addEventListener('click', function() {
+    p.addEventListener('click', function() {
         p.classList.toggle('done')
     });
     li.addEventListener('dblclick', priority);
@@ -115,12 +184,22 @@ let createNewListElement= () => {
     let li = document.createElement('li');
     let p = document.createElement('p');
     let btn = document.createElement('button');
+    let btnEdit = document.createElement('button');
+    let btnEditDone = document.createElement('button');
     let img = document.createElement('img');
+    let imgEdit = document.createElement('img');
+    let imgEditDone = document.createElement('img');
     img.src = "https://cdn-icons-png.flaticon.com/512/3405/3405244.png";
     img.classList.add('deleteIcon');
+    imgEdit.src = "https://cdn-icons-png.flaticon.com/128/1828/1828911.png";
+    imgEdit.classList.add('editIcon');
+    imgEditDone.src = "https://cdn-icons-png.flaticon.com/128/1442/1442912.png";
+    imgEditDone.classList.add('editDoneIcon');
     li.classList.add('listItem2');
     p.classList.add('listText');
     btn.classList.add('btnDel');
+    btnEdit.classList.add('btnEdit');
+    btnEditDone.classList.add('btnEditDone');
     ul.appendChild(li);
     li.appendChild(p);
     if (inputLength() < 65 && input.value != ' ') {
@@ -129,7 +208,12 @@ let createNewListElement= () => {
         alert('Text too long! (Max 64 characters)');
         input.value = '';
     }
+    li.appendChild(btnEdit);
+    li.appendChild(btnEditDone);
     li.appendChild(btn);
+    btnEdit.appendChild(imgEdit);
+    btnEditDone.appendChild(imgEditDone);
+    btn.appendChild(img);
     btn.onclick = function() {
         let listItem = document.querySelectorAll('.listItem');
         let listItem2 = document.querySelectorAll('.listItem2');
@@ -148,12 +232,36 @@ let createNewListElement= () => {
             if (listItem.length === 11 && listItem2.length > 0  && this.parentElement.className === 'listItem moved') {
                 transferListItem();
             }
+            if (length() <= 22) {
+                let div = document.querySelector('.list');
+                div.style.flexDirection = "row";
+                div.style.maxHeight = "52vh";
+                div.style.overflowY = "hidden";
+            }
         }
         length();
     }
-    btn.appendChild(img);
+
+    btnEdit.onclick = function() {
+        p.contentEditable = true;
+        p.style.backgroundColor = '#aaa';
+        btnEdit.style.display = 'none';
+        btnEditDone.style.display = 'block';
+    }
+
+    btnEditDone.onclick = function() {
+        if (p.innerHTML.length < 64) {   
+            p.contentEditable = false;
+            p.style.background = 'none';
+            btnEditDone.style.display = 'none';
+            btnEdit.style.display = 'block';
+        } else {
+            alert("Text too long! (Max 64 characters)")
+        }
+    }
+
     input.value = "";
-    li.addEventListener('click', function() {
+    p.addEventListener('click', function() {
         p.classList.toggle('done')
     });
     li.addEventListener('dblclick', priority);
@@ -229,7 +337,6 @@ let toggledone = (event) => {
            return event.target = listText[i].classList.toggle('done');
         }
     }
-    
 }
 
 let priority = (event) => {
@@ -285,6 +392,6 @@ settingsBtn.addEventListener('click', displaySettingsBlock);
 closeBtn.addEventListener('click', displaySettingsNone);
 
 for (let i=0; i < listItem.length;i++) {
-    listItem[i].addEventListener('click', toggledone);
+    listText[i].addEventListener('click', toggledone);
     listItem[i].addEventListener('dblclick', priority);
 }
