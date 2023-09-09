@@ -127,6 +127,10 @@ button {
     font-weight: 500;
     font-family: 'Black Ops One', cursive;
     transition: all 0.1s ease-in;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover {
