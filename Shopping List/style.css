@@ -234,11 +234,7 @@ h2 {
     transition: ease-in 0.2s;
 }
 
-
-
-
 .listText {
-    display: inline-block;
     padding-left: 5px;
     font-weight: 550;
     width: 90%;
@@ -257,7 +253,7 @@ h2 {
     margin-left: auto;
     display: flex;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
 }
 
 .btnDel:hover {
@@ -270,6 +266,57 @@ h2 {
     width: 1.8em;
 }
 
+.btnEdit {
+    width:2em;
+    padding: 7px 0px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left:1px solid #ccc;
+    background-color: transparent;
+    font-weight: 600;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnEdit:hover {
+    background-color: rgba(0, 255, 98, 0.5);
+    color: #fff;
+    transition: ease-in 0.2s;
+}
+
+.editIcon {
+    width: 1.5em;
+}
+
+.btnEditDone {
+    width:2em;
+    padding: 7px 0px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left:1px solid #ccc;
+    background-color: transparent;
+    font-weight: 600;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.btnEditDone:hover {
+    background-color: rgba(0, 255, 98, 0.5);
+    color: #fff;
+    transition: ease-in 0.2s;
+}
+
+.editDoneIcon {
+    width: 1.5em;
+}
+
 .done {
     text-decoration: line-through;
     text-decoration-thickness: 3px;
@@ -277,7 +324,7 @@ h2 {
 }
 
 .priority {
-    background-color: rgba(33, 226, 162, 0.5);
+    background-color: rgba(33, 226, 162, 0.5) !important; 
 }
 
 .btnErase {
@@ -523,6 +570,14 @@ h2 {
     
     .deleteIcon {
         width: 1.9em;
+    }
+
+    .btnEdit {
+        width: 2.5em;
+    }
+
+    .btnEditDone {
+        width: 2.5em;
     }
     
     .btnErase {
