@@ -361,11 +361,11 @@ h2 {
 }
 
 .settingsContainer.slide-in {
-    animation: slide-in 1s ease;
+    animation: slide-in 0.3s ease;
 }
 
 .settingsContainer.slide-out {
-    animation: slide-out 1s ease reverse;
+    animation: slide-out 0.2s ease reverse;
 }
 
     
@@ -614,7 +614,7 @@ h2 {
     }
     
     .settingsContainer.slide-out {
-        animation: slide-out 1s ease;
+        animation: slide-out 0.3s ease;
     }
     
     @keyframes slide-in {

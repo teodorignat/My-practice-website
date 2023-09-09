@@ -375,12 +375,12 @@ let displaySettingsNone = () => {
         settings.classList.toggle('slide-out');
         setTimeout(() => { 
             settings.style.display = "none";
-        },1000);
+        }, 200);
     } else {
         settings.classList.toggle('slide-out');
         setTimeout(() => { 
             settings.style.display = "none";
-        },1000);
+        }, 200);
     }
 }
 
