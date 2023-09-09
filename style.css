@@ -500,7 +500,21 @@ body {
         min-height: 300px;
     }
 
-   
+    .project a img {
+        width: 60%;
+    }
+
+    .project a img:hover {
+        width: 70%;
+    }
+
+    .project:nth-child(2) a img {
+        width: 60%;
+    }
+
+    .project:nth-child(2) a img:hover {
+        width: 70%;
+    }
 
     .about-content {
         flex-direction: column-reverse;
