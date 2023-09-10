@@ -58,26 +58,43 @@ for (let i = 0 ; i < btnDel.length; i++) {
         length();
     }
     
-    btnEdit[i].onclick = function() {
-        let listText = document.querySelectorAll(".listText");
-        listText[i].contentEditable = true;
-        listText[i].style.backgroundColor = '#aaa';
-        btnEdit[i].style.display = 'none';
-        btnEditDone[i].style.display = 'block';
-    }
+}
 
-    btnEditDone[i].onclick = function() {
-        let listText = document.querySelectorAll(".listText");
-        if (listText[i].innerHTML.length < 64) { 
-            listText[i].contentEditable = false;
-            listText[i].style.backgroundColor = 'transparent';
-            btnEditDone[i].style.display = 'none';
-            btnEdit[i].style.display = 'block';
-        } else {
-            alert('Text too long! (Max 64 characters)');
+let editFunction = () => {
+    let btnEdit = document.querySelectorAll('.btnEdit');
+    let btnEditDone = document.querySelectorAll('.btnEditDone');
+    let listText = document.querySelectorAll(".listText");
+    for (let i = 0; i < btnEdit.length; i++) {
+        btnEdit[i].onclick = function() {
+            listText[i].contentEditable = true;
+            listText[i].style.backgroundColor = '#aaa';
+            btnEdit[i].style.display = 'none';
+            btnEditDone[i].style.display = 'block';
         }
     }
 }
+
+let editDoneFunction = () => {
+    let btnEdit = document.querySelectorAll('.btnEdit');
+    let btnEditDone = document.querySelectorAll('.btnEditDone');
+    let listText = document.querySelectorAll(".listText");
+    for (let i = 0; i < btnEditDone.length; i++) {
+        btnEditDone[i].onclick = function() {
+            if (listText[i].innerHTML.length < 64) { 
+                listText[i].contentEditable = false;
+                listText[i].style.backgroundColor = 'transparent';
+                btnEditDone[i].style.display = 'none';
+                btnEdit[i].style.display = 'block';
+            } else {
+                alert('Text too long! (Max 64 characters)');
+            }
+        }
+    }
+}
+
+editFunction();
+editDoneFunction();
+
 
 let length = () => {
     let listItem = document.querySelectorAll('.listItem');
@@ -146,14 +163,14 @@ let createListElement = ()  => {
         }
         length();
     }
-
+    
     btnEdit.onclick = function() {
         p.contentEditable = true;
         p.style.backgroundColor = '#aaa';
         btnEdit.style.display = 'none';
         btnEditDone.style.display = 'block';
     }
-
+    
     btnEditDone.onclick = function() {
         if (p.innerHTML.length < 64) {   
             p.contentEditable = false;
@@ -164,7 +181,7 @@ let createListElement = ()  => {
             alert("Text too long! (Max 64 characters)")
         }
     }
-
+    
     input.value = "";
     p.addEventListener('click', function() {
         p.classList.toggle('done')
@@ -241,14 +258,14 @@ let createNewListElement= () => {
         }
         length();
     }
-
+    
     btnEdit.onclick = function() {
         p.contentEditable = true;
         p.style.backgroundColor = '#aaa';
         btnEdit.style.display = 'none';
         btnEditDone.style.display = 'block';
     }
-
+    
     btnEditDone.onclick = function() {
         if (p.innerHTML.length < 64) {   
             p.contentEditable = false;
@@ -259,7 +276,7 @@ let createNewListElement= () => {
             alert("Text too long! (Max 64 characters)")
         }
     }
-
+    
     input.value = "";
     p.addEventListener('click', function() {
         p.classList.toggle('done')
@@ -334,7 +351,7 @@ let toggledone = (event) => {
     let listText = document.querySelectorAll('.listText');
     for (let i = 0; i < listText.length; i++) {
         if (event.target === listText[i]) {
-           return event.target = listText[i].classList.toggle('done');
+            return event.target = listText[i].classList.toggle('done');
         }
     }
 }
@@ -364,7 +381,7 @@ let displaySettingsBlock = () => {
     } else {
         settings.classList.toggle('slide-in');
         settings.style.display = "block";
-}
+    }
 }
 let displaySettingsNone = () => {
     let settings = document.querySelector('.settingsContainer');
