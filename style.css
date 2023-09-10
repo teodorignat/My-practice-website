@@ -501,19 +501,19 @@ body {
     }
 
     .project a img {
-        width: 60%;
+        width: 40%;
     }
 
     .project a img:hover {
-        width: 70%;
+        width: 50%;
     }
 
     .project:nth-child(2) a img {
-        width: 60%;
+        width: 55%;
     }
 
     .project:nth-child(2) a img:hover {
-        width: 70%;
+        width: 65%;
     }
 
     .about-content {
@@ -559,6 +559,13 @@ body {
         font-size: 1.5em;
     }
 
+    .project:nth-child(2) a img {
+        width: 40%;
+    }
+
+    .project:nth-child(2) a img:hover {
+        width: 50%;
+    }
 
     .project h2 {
         font-size: 1em;
