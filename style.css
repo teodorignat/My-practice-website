@@ -594,6 +594,22 @@ body {
         height: 400px;
     }
 
+    .project a img {
+        width: 50%;
+    }
+
+    .project a img:hover {
+        width: 60%;
+    }
+
+    .project:nth-child(2) a img {
+        width: 50%;
+    }
+
+    .project:nth-child(2) a img:hover {
+        width: 60%;
+    }
+
     .about-header h2 {
         font-size: 0.8m;
     }
