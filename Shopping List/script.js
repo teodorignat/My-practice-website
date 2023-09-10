@@ -54,10 +54,8 @@ for (let i = 0 ; i < btnDel.length; i++) {
             div.style.maxHeight = "52vh";
             div.style.overflowY = "hidden";
         }
-
         length();
     }
-    
 }
 
 let editFunction = () => {
@@ -104,7 +102,7 @@ let length = () => {
 
 let inputLength = () => {
     return input.value.length;
-};
+}
 
 let createListElement = ()  => {
     let ul = document.getElementsByClassName('shoppingList');
