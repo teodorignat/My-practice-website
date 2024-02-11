@@ -392,8 +392,8 @@ body {
 }
 
 .titlebox.reveal {
-    transform: translateY(-200%);
-    transition: transform .5s ease-in-out;
+    transform: translateY(-150%);
+    transition: all 1s ease-in-out;
 }
 
 .reveal.active {
