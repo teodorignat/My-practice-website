@@ -81,10 +81,9 @@ body {
 
 #ToDoList {
     width: 600px;
-    /* height: 850px; What i've used before */
-    min-height: 92vh; /* What i should've used instead incase my list needs to grow*/
-    position: absolute;
-    top: 5%;
+    height: 850px;
+    /* min-height: 92vh; What i should've used instead incase my list needs to grow */
+    position: relative;
     border:5px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 1px;
@@ -443,7 +442,7 @@ h2 {
 @media only screen and (max-width: 800px) {
     #ToDoList {
         width: 550px;
-        min-height: 89vh;
+        height: 89vh;
         top: 9%;
     }
     
@@ -509,7 +508,7 @@ h2 {
     
     #ToDoList {
         width: 90vw;
-        min-height: 80vh;
+        height: 85vh;
     }
     
     .settingsBtn {
