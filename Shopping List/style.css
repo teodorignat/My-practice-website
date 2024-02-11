@@ -82,8 +82,8 @@ body {
 }
 
 #ToDoList {
-    width: 600px;
-    height: 850px;
+    width: 30vw;
+    height: 92vh;
     /* min-height: 92vh; What i should've used instead incase my list needs to grow */
     position: relative;
     border:5px solid rgba(255, 255, 255, 0.1);
@@ -255,6 +255,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btnDel:hover {
@@ -280,6 +281,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btnEdit:hover {
