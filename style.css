@@ -393,7 +393,7 @@ body {
 
 .titlebox.reveal {
     transform: translateY(-150%);
-    transition: all 1s ease-in-out;
+    transition: all .6s ease-in-out;
 }
 
 .reveal.active {
