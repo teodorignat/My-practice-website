@@ -1,22 +1,21 @@
 const btnScroll = document.querySelector('.scrollbtn');
+let reveals = document.querySelectorAll('.reveal');
 
 btnScroll.onclick = () => {
     btnScroll.scrollIntoView(true);
 }
 
-let reveal = () => {
-    let reveals = document.querySelectorAll('.reveal')   
-    for (let i=0; i < reveals.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = reveals[i].getBoundingClientRect().top;
-        let elementVisible = 100; 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
+function reveal() {
+    let windowHeight = window.innerHeight;
+    reveals.forEach( reveal => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight) {
+            reveal.classList.add('active');
         } else {
-            reveals[i].classList.remove("active");
+            reveal.classList.remove('active');
         }
-    }
+    })
 }
 
-window.addEventListener("scroll", reveal);
 reveal();
+window.addEventListener("scroll", reveal);

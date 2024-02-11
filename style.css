@@ -98,9 +98,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    animation: fade-top 1s ease;
-    
+    align-items: center;    
 }
 
 .coverimg {
@@ -194,7 +192,8 @@ body {
     padding: 1.5em 2em;
     background-color: rgba(255, 255, 255, 0.9);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns:  repeat(auto-fit, minmax(min(100%/3, max(300px, 100%/6)), 1fr));
     grid-template-rows: repeat(auto-fill, minmax(300px,1fr));
     gap: 2em;
     overflow: hidden;
@@ -381,52 +380,25 @@ body {
     position: relative;
     transform: translateY(150px);
     opacity: 0;
-    transition: 1s all ease;
+    transition: transform .3s ease;
+}
+
+.about-text.reveal {
+    transform: translateX(100%);
+}
+
+.about-contact.reveal {
+    transform: translateX(-100%);
+}
+
+.titlebox.reveal {
+    transform: translateY(-200%);
+    transition: transform .5s ease-in-out;
 }
 
 .reveal.active {
     transform: translateY(0);
     opacity: 1;
-}
-
-.active.fade-left {
-    animation: fade-left 0.5s ease-in;
-  }
-.active.fade-right {
-    animation: fade-right 0.5s ease-in;
-}
-
-@keyframes fade-left {
-    0% {
-      transform: translateX(-100px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-}
-
-@keyframes fade-right {
-    0% {
-      transform: translateX(100px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-}
-
-@keyframes fade-top {
-    0% {
-      transform: translateY(-100px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
 }
 
 @media only screen and (max-width: 1137px) {
